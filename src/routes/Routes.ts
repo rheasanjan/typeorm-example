@@ -17,10 +17,10 @@ export default class Routes {
             .get(this.controller.getAllSuperHeroes)
             .post(this.controller.addSuperHero)
 
-        // app.route('/super-hero/:id')
-        //     .get(this.controller.getSuperHeroById)
-        //     .put(this.controller.updateSuperHero)
-        //     .delete(this.controller.deleteSuperHero);
+        app.route('/super-hero/:id')
+            .get(this.controller.getSuperHeroById)
+            .put(this.controller.updateSuperHero)
+            .delete(this.controller.deleteSuperHero);
 
     }
 }
