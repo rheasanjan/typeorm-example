@@ -24,16 +24,17 @@ export default class Controller {
             superHero.name = reqSuperHero.name;
             superHero.power = []
 
-            reqPower.forEach(eachPower => {
+            reqPower && reqPower.forEach(eachPower => {
                 let power = new Power()
-                power.ability = eachPower;
+                power.ability = eachPower.ability;
                 superHero.power.push(power)
             })
 
             await connection.manager.save(superHero);
             res.json({message: "Saved successfully"})
         }).catch(err => {
-            res.json(err)
+            console.log(err)
+            res.status(500).send({message: err.message})
         })
     }
 }

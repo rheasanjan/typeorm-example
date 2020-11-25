@@ -1,7 +1,7 @@
 import {createConnection} from "typeorm";
 import SuperHero from "../entity/SuperHero"
 import Power from "../entity/Power"
-import { Config } from "../config";
+import Config  from "../config";
 
 export const Connection = createConnection({
     type: "postgres",
